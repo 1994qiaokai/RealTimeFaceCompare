@@ -5,9 +5,7 @@ import com.hzgc.ftpserver.util.Download;
 import java.io.File;
 import java.util.Random;
 
-/**
- * éæ哄寤虹®褰锛灏涓缁å剧åéå版瀹FTP
- */
+
 public class UpDataToFtp {
     private static MetricRegistry metric = new MetricRegistry();
     private final static Counter counter = metric.counter("counter");
@@ -29,10 +27,13 @@ public class UpDataToFtp {
                 if (tempList[j].isFile()) {
                     String orginFileName = tempList[j].getAbsolutePath();
                     String fileName = tempList[j].getName();
+                    System.out.println(fileName);
+                    System.out.println(tempList[j].getAbsoluteFile());
                     StringBuilder filePath = new StringBuilder();
                     //拼装路径
                     filePath = filePath.append(IpcId).append("/").append(tempList[j].getName().substring(0, 13).replaceAll("_", "/")).append(randPath);
-                    Download.upLoadFromProduction("172.18.18.136", 2121, "admin", "123456", "", filePath.toString(), fileName, orginFileName);
+                    System.out.println(filePath);
+                    Download.upLoadFromProduction("172.18.18.103", 2121, "admin", "123456", "", filePath.toString(), fileName, orginFileName);
                     counter.inc();
                     System.out.println(counter.getCount());
                 }

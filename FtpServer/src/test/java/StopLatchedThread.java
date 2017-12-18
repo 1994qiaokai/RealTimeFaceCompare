@@ -12,7 +12,7 @@ public class StopLatchedThread extends Thread {
 
     public void run() {
         try {
-            UpDataToFtp.upDataTest("e:/test1", 1, "test");
+            UpDataToFtp.upDataTest("f:/data", 1, "test");
         } finally {
             stopLatch.countDown();
         }

@@ -1,6 +1,5 @@
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.concurrent.TimeUnit;
 
 /**
  * 线程池的方式创建线程
@@ -22,6 +21,6 @@ public class ThreadPoolTest {
 
 class ThreadPoolDemo implements Runnable {
     public void run() {
-        UpDataToFtp.upDataTest("e:/testimage", 1, "test");
+        UpDataToFtp.upDataTest("f:/data1", 1, "zhaozhe1212");
     }
 }
