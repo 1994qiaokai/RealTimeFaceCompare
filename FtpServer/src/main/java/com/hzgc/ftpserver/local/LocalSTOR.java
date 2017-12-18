@@ -174,7 +174,7 @@ public class LocalSTOR extends AbstractCommand {
                 LOG.info("File uploaded {}", fileName);
 
                 // notify the statistics component
-                ServerFtpStatistics ftpStat = (ServerFtpStatistics) localContext
+                ServerFtpStatistics ftpStat = (ServerFtpStatistics) context
                         .getFtpStatistics();
                 ftpStat.setUpload(session, file, transSz);
 
